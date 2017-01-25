@@ -5,11 +5,11 @@
  */
 
 import {
-  DEFAULT_ACTION,
+    TOGGLE_DRAWER
 } from './constants';
 
-export function defaultAction() {
-  return {
-    type: DEFAULT_ACTION,
-  };
+export function toggleDrawer() {
+    return {
+        type: TOGGLE_DRAWER
+    }
 }

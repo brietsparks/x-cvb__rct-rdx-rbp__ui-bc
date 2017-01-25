@@ -4,20 +4,22 @@
  *
  */
 
-import { fromJS } from 'immutable';
+import {fromJS} from 'immutable';
 import {
-  DEFAULT_ACTION,
+    TOGGLE_DRAWER,
 } from './constants';
 
-const initialState = fromJS({});
+const initialState = fromJS({
+    isDrawerOpen: false
+});
 
 function builderContainerReducer(state = initialState, action) {
-  switch (action.type) {
-    case DEFAULT_ACTION:
-      return state;
-    default:
-      return state;
-  }
+    switch (action.type) {
+        case TOGGLE_DRAWER:
+            return state.set('isDrawerOpen', !state.get('isDrawerOpen'));
+        default:
+            return state;
+    }
 }
 
 export default builderContainerReducer;

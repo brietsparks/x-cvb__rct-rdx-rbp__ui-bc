@@ -50,14 +50,35 @@ export default function createRoutes(store) {
                 const importModules = Promise.all([
                     System.import('containers/BuilderContainer/reducer'),
                     System.import('containers/BuilderContainer/sagas'),
+
+                    System.import('containers/ExpsContainer/reducer'),
+                    System.import('containers/ExpsContainer/sagas'),
+
+                    System.import('containers/SkillsContainer/reducer'),
+                    System.import('containers/SkillsContainer/sagas'),
+
                     System.import('containers/BuilderContainer'),
                 ]);
 
                 const renderRoute = loadModule(cb);
 
-                importModules.then(([reducer, sagas, component]) => {
-                    injectReducer('builderContainer', reducer.default);
-                    injectSagas('builderContainer', sagas.default);
+                importModules.then(([
+                    builderReducer, builderSagas,
+                    expsReducer, expsSagas,
+                    skillsReducer, skillsSagas,
+
+                    component
+                ]) => {
+                    injectReducer('builderContainer', builderReducer.default);
+                    injectSagas('builderContainer', builderSagas.default);
+
+                    injectReducer('expsContainer', expsReducer.default);
+                    injectSagas('expsContainer', expsSagas.default);
+
+                    injectReducer('skillsContainer', skillsReducer.default);
+                    injectSagas('skillsContainer', skillsSagas.default);
+
+
                     renderRoute(component);
                 });
 

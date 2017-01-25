@@ -4,4 +4,4 @@
  *
  */
 
-export const DEFAULT_ACTION = 'app/BuilderContainer/DEFAULT_ACTION';
+export const TOGGLE_DRAWER = 'app/BuilderContainer/TOGGLE_DRAWER';
