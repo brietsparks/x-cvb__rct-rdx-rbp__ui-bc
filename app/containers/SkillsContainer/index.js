@@ -9,6 +9,7 @@ import {connect} from 'react-redux';
 import selectSkillsContainer from './selectors';
 
 import {addSkill} from './actions';
+import Skill from '../../components/Skill';
 
 import TagList from '../../components/TagList';
 
@@ -18,9 +19,20 @@ export class SkillsContainer extends React.Component { // eslint-disable-line re
             <div>
                 <TagList
                     tags={this.props.skills}
-                    addTag={addSkill}
+                    factory={this.skillFactory}
+                    add={addSkill}
+                    header="Skills"
                 />
             </div>
+        );
+    }
+
+    skillFactory(skill) {
+        return (
+            <Skill
+                {...skill}
+                key={skill.id}
+            />
         );
     }
 }

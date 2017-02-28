@@ -57,6 +57,9 @@ export default function createRoutes(store) {
                     System.import('containers/SkillsContainer/reducer'),
                     System.import('containers/SkillsContainer/sagas'),
 
+                    System.import('containers/PersonsContainer/reducer'),
+                    System.import('containers/PersonsContainer/sagas'),
+
                     System.import('containers/BuilderContainer'),
                 ]);
 
@@ -66,6 +69,7 @@ export default function createRoutes(store) {
                     builderReducer, builderSagas,
                     expsReducer, expsSagas,
                     skillsReducer, skillsSagas,
+                    personsReducer, personsSagas,
 
                     component
                 ]) => {
@@ -78,6 +82,8 @@ export default function createRoutes(store) {
                     injectReducer('skillsContainer', skillsReducer.default);
                     injectSagas('skillsContainer', skillsSagas.default);
 
+                    injectReducer('personsContainer', personsReducer.default);
+                    injectSagas('personsContainer', personsSagas.default);
 
                     renderRoute(component);
                 });

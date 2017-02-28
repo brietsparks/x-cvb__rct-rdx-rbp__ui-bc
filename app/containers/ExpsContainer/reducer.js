@@ -13,11 +13,33 @@ const initialState = fromJS({
     exps: [
         {
             id: 1,
-            title: 'floob'
+            parent_id: null,
+            title: 'SIPRM',
+            is_project: true,
+            next_id: null
         },
         {
             id: 2,
-            title: 'glarb'
+            parent_id: 1,
+            title: 'Re-Architecture',
+            is_project: true,
+            next_id: 3
+        },
+        {
+            id: 3,
+            parent_id: 1,
+            title: 'SOAP API implementation',
+            is_project: false,
+            next_id: null,
+            skills: [1,2,3],
+        },
+        {
+            id: 4,
+            parent_id: 2,
+            title: 'AJAX front-end',
+            is_project: false,
+            next_id: null,
+            skills: [4]
         }
     ]
 });

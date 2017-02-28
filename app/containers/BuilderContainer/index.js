@@ -10,6 +10,7 @@ import selectBuilderContainer from './selectors';
 
 import ExpContainer from '../ExpsContainer';
 import SkillsContainer from '../SkillsContainer';
+import PersonsContainer from '../PersonsContainer';
 
 import {toggleDrawer} from './actions';
 
@@ -24,8 +25,13 @@ export class BuilderContainer extends React.Component { // eslint-disable-line r
 
                 <Drawer
                     toggleDrawer={this.props.toggleDrawer}
-                    contents={<SkillsContainer/>}
+                    contents={[
+                        <SkillsContainer key='skillsContainer'/>,
+                        <PersonsContainer key="personsContainer"/>
+                    ]}
                 />
+
+                <hr/>
 
                 <Stage
                     contents={<ExpContainer />}

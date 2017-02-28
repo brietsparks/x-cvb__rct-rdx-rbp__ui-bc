@@ -13,11 +13,19 @@ const initialState = fromJS({
     skills: [
         {
             id: 1,
-            title: 'flarbing'
+            title: 'Ubuntu',
         },
         {
             id: 2,
-            title: 'glarbing'
+            title: 'MySQL',
+        },
+        {
+            id: 3,
+            title: 'PHP',
+        },
+        {
+            id: 4,
+            title: 'Javascript'
         }
     ]
 });
