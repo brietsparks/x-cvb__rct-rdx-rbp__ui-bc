@@ -38,9 +38,18 @@ const initialState = fromJS({
             parent_id: 2,
             title: 'AJAX front-end',
             is_project: false,
-            next_id: null,
+            next_id: 5,
             skills: [4]
-        }
+        },
+        {
+            id: 5,
+            parent_id: 2,
+            title: 'CI',
+            is_project: false,
+            next_id: null,
+            skills: []
+        },
+
     ]
 });
 
